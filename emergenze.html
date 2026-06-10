@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Emergenze · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="emergenze">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Emergenze</span>
+    <h1>Azioni immediate, cosa non fare e passaggi successivi.</h1>
+    <p class="lead">La sezione è pensata per situazioni pratiche urgenti: smarrimenti, furti, carte, telefono, problemi in casa e orientamento medico.</p>
+  </div>
+  <div class="card"><h3>Regola base</h3><p class="warning">Per pericolo immediato o rischio fisico, usa i numeri di emergenza del luogo in cui ti trovi.</p></div>
+</section>
+<section class="section"><div id="emergencyGrid" class="grid cols-3"></div></section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Scadenze · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="scadenze">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Dashboard scadenze</span>
+    <h1>Calendario pratico per non perdere date importanti.</h1>
+    <p class="lead">Aggiungi verifiche, appuntamenti, pratiche, pagamenti e rinnovi. Le scadenze compaiono anche in Home e Area personale.</p>
+  </div>
+  <div class="card"><h3>Esempi</h3><p class="muted">ISEE, documenti, visite, esami, bandi, colloqui, pagamenti, appuntamenti CAF.</p><button id="seedDeadlines" class="btn secondary">Aggiungi demo</button></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Nuova scadenza</h2>
+    <form id="deadlineForm" class="form-grid">
+      <div class="form-field"><label>Titolo</label><input class="input" name="title" required placeholder="es. Appuntamento CAF"></div>
+      <div class="form-field"><label>Data</label><input class="input" name="date" type="date"></div>
+      <div class="form-field"><label>Tipo</label><select class="select" name="type"><option>Documenti</option><option>Scuola</option><option>Università</option><option>Salute</option><option>Lavoro</option><option>Pagamenti</option><option>Pratica</option></select></div>
+      <div class="form-field"><label>Priorità</label><select class="select" name="priority"><option>Bassa</option><option>Media</option><option>Alta</option></select></div>
+      <div class="form-field"><label>Note</label><textarea class="textarea" name="notes"></textarea></div>
+      <button class="btn">Salva scadenza</button>
+    </form>
+  </div>
+  <div><h2>Elenco scadenze</h2><div id="deadlineList" class="grid"></div></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

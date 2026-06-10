@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Profilo · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="profilo">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Profilo e accessibilità</span>
+    <h1>Personalizza linguaggio, dati locali e modalità utente.</h1>
+    <p class="lead">In questa versione il login è demo: serve per personalizzare l’esperienza nello stesso browser.</p>
+  </div>
+  <div class="card"><h3>Stato</h3><p id="profileStatus" class="muted">Modalità ospite</p></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Profilo demo</h2>
+    <form id="profileForm" class="form-grid">
+      <div class="form-field"><label>Nome</label><input id="loginName" class="input" name="name"></div>
+      <div class="form-field"><label>Email</label><input id="loginEmail" class="input" name="email" type="email"></div>
+      <button class="btn">Salva profilo</button>
+    </form>
+  </div>
+  <div class="card">
+    <h2>Modalità utente</h2>
+    <form id="settingsForm" class="form-grid">
+      <div class="form-field"><label>Tipo utente</label><select id="roleSelect" class="select"><option>Studente</option><option>Genitore</option><option>Adulto</option><option>Anziano</option></select></div>
+      <label class="check-row"><input id="largeText" type="checkbox"><span>Testo grande</span></label>
+      <label class="check-row"><input id="highContrast" type="checkbox"><span>Contrasto alto</span></label>
+      <label class="check-row"><input id="focusMode" type="checkbox"><span>Modalità senza distrazioni</span></label>
+    </form>
+  </div>
+</section>
+<section class="section grid cols-3">
+  <div class="card"><h3>Esporta dati</h3><p class="muted">Scarica un JSON con i dati locali.</p><button id="exportData" class="btn secondary">Esporta</button></div>
+  <div class="card"><h3>Importa dati</h3><p class="muted">Ripristina un backup JSON.</p><input id="importData" class="input" type="file" accept="application/json"></div>
+  <div class="card"><h3>Reset</h3><p class="muted">Elimina tutto dal browser.</p><button id="clearData" class="btn danger">Cancella dati</button></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

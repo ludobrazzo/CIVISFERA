@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Area personale · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="dashboard">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Area personale</span>
+    <h1>Profilo di <span id="dashName">Ospite</span></h1>
+    <p class="lead">Qui trovi pratiche salvate, checklist, scadenze, documenti locali e testi generati.</p>
+  </div>
+  <div class="card"><h3>Versione demo</h3><p class="muted">I dati sono salvati nel browser con localStorage. Per account reali serve un backend o Firebase.</p><a href="profilo.html" class="btn secondary">Gestisci profilo</a></div>
+</section>
+<section class="section"><div id="dashStats" class="grid cols-4"></div></section>
+<section class="section grid cols-2">
+  <div><div class="section-head"><h2>Checklist</h2><a class="btn secondary small-btn" href="percorso.html">Nuovo percorso</a></div><div id="dashChecklists" class="grid"></div></div>
+  <div><div class="section-head"><h2>Scadenze</h2><a class="btn secondary small-btn" href="scadenze.html">Apri calendario</a></div><div id="dashDeadlines" class="grid"></div></div>
+</section>
+<section class="section"><div class="section-head"><h2>Testi generati</h2><a class="btn secondary small-btn" href="generatori.html">Genera testo</a></div><div id="dashMessages" class="grid cols-2"></div></section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

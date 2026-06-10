@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Scuola · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="studio">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Sezione scuola</span>
+    <h1>Planner studio, interrogazioni, mappe e domande.</h1>
+    <p class="lead">Strumenti per verifiche, interrogazioni, maturità, comunicazioni e organizzazione degli appunti.</p>
+  </div>
+  <div class="card"><h3>Funzione originale</h3><p class="muted">“Interrogami” crea domande e risposte modello per simulare un orale.</p></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Planner verifica/interrogazione</h2>
+    <form id="studyForm" class="form-grid">
+      <div class="form-field"><label>Materia</label><input class="input" name="subject" placeholder="es. Filosofia"></div>
+      <div class="form-field"><label>Argomento</label><input class="input" name="topic" placeholder="es. Kant"></div>
+      <div class="form-field"><label>Giorni disponibili</label><input class="input" name="days" type="number" min="1" max="14" value="4"></div>
+      <button class="btn">Crea piano</button>
+    </form>
+  </div>
+  <div id="studyOutput"></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Interrogami</h2>
+    <form id="quizForm" class="form-grid">
+      <div class="form-field"><label>Materia</label><input class="input" name="subject"></div>
+      <div class="form-field"><label>Argomento</label><input class="input" name="topic"></div>
+      <div class="form-field"><label>Difficoltà</label><select class="select" name="difficulty"><option>Base</option><option>Media</option><option>Alta</option></select></div>
+      <button class="btn">Genera domande</button>
+    </form>
+  </div>
+  <div id="quizOutput"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

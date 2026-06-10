@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Generatori · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="generatori">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Generatori pratici</span>
+    <h1>Email, messaggi, reclami e traduttore burocratico.</h1>
+    <p class="lead">Compila pochi campi e ottieni un testo formale già pronto. I testi generati vengono salvati nell’area personale.</p>
+  </div>
+  <div class="card"><h3>Tipi disponibili</h3><p class="muted">Professori, segreterie, medici, lavoro, rimborso, reclamo, appuntamenti e deleghe.</p></div>
+</section>
+
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Generatore messaggio</h2>
+    <form id="messageForm" class="form-grid">
+      <div class="form-field"><label>Tipo</label><select id="genType" name="type" class="select"></select></div>
+      <div class="form-field"><label>Destinatario</label><input class="input" name="recipient" placeholder="es. Prof.ssa Rossi / Segreteria"></div>
+      <div class="form-field"><label>Oggetto</label><input class="input" name="subject" placeholder="es. Richiesta chiarimento assenza"></div>
+      <div class="form-field"><label>Nome e cognome</label><input class="input" name="name"></div>
+      <div class="form-field"><label>Tono</label><select class="select" name="tone"><option>formale</option><option>gentile</option><option>diretto</option></select></div>
+      <div class="form-field"><label>Urgenza</label><select class="select" name="urgency"><option>Normale</option><option>Alta</option></select></div>
+      <div class="form-field"><label>Dettagli importanti</label><textarea class="textarea" name="details" placeholder="Spiega motivo, date, problema, richiesta..."></textarea></div>
+      <button class="btn">Genera e salva</button>
+    </form>
+  </div>
+  <div class="card">
+    <div class="section-head"><h2>Risultato</h2><button id="copyMessage" class="btn secondary small-btn">Copia</button></div>
+    <pre id="messageOutput" class="output-box">Il testo comparirà qui.</pre>
+  </div>
+</section>
+
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Traduttore burocratico</h2>
+    <form id="bureauForm" class="form-grid">
+      <div class="form-field"><label>Incolla comunicazione o testo difficile</label><textarea class="textarea" name="text" placeholder="es. La domanda deve essere presentata entro il termine perentorio..."></textarea></div>
+      <button class="btn">Traduci in azioni</button>
+    </form>
+  </div>
+  <div id="bureauOutput"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

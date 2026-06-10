@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Salute · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="salute">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Sezione salute</span>
+    <h1>Organizza visite, referti, domande e promemoria.</h1>
+    <p class="lead">Civisfera non sostituisce un medico e non fa diagnosi: aiuta solo a preparare documenti, domande e passaggi.</p>
+  </div>
+  <div class="card"><h3>Limite importante</h3><p class="warning">In caso di pericolo immediato o sintomi gravi, contatta i servizi di emergenza o un medico.</p></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Preparazione visita</h2>
+    <form id="healthForm" class="form-grid">
+      <div class="form-field"><label>Tipo visita/problema</label><input class="input" name="type" placeholder="es. visita dermatologica"></div>
+      <div class="form-field"><label>Sintomi o motivo</label><textarea class="textarea" name="symptoms" placeholder="Scrivi da quando, frequenza, farmaci, dubbi..."></textarea></div>
+      <button class="btn">Genera promemoria</button>
+    </form>
+  </div>
+  <div id="healthOutput"></div>
+</section>
+<section class="section grid cols-3">
+  <div class="card"><h3>Medico di base</h3><p class="muted">Per problemi non urgenti, ricette, certificati e invio a specialisti.</p></div>
+  <div class="card"><h3>CUP</h3><p class="muted">Per prenotare visite ed esami con il sistema sanitario.</p></div>
+  <div class="card"><h3>Pronto soccorso</h3><p class="muted">Per situazioni acute o potenzialmente gravi.</p></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

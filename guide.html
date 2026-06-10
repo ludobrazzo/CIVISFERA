@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Guide · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="guide">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Archivio guide</span>
+    <h1>Guide semplici, operative e salvabili.</h1>
+    <p class="lead">Ogni guida contiene cosa serve, passaggi, tempi, costi indicativi, errori comuni e checklist finale.</p>
+    <input id="guideSearch" class="input" placeholder="Cerca: ISEE, SPID, maturità, visita medica, CV...">
+  </div>
+  <div class="card"><h3>Formato guida</h3><div class="list"><div class="list-item">✅ <span>Spiegazione breve</span></div><div class="list-item">📄 <span>Documenti necessari</span></div><div class="list-item">➡️ <span>Procedura passo passo</span></div><div class="list-item">⚠️ <span>Errori da evitare</span></div></div></div>
+</section>
+<section class="section">
+  <div id="guideTabs" class="tabs"></div>
+  <div id="guideGrid" class="grid cols-3"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

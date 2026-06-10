@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Home · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="home">
+<main id="main">
+
+<section class="hero">
+  <div class="hero-panel">
+    <span class="kicker">◎ Assistente civico personale</span>
+    <h1>Cosa devi risolvere oggi?</h1>
+    <p class="lead">Civisfera trasforma problemi pratici, scolastici, burocratici e organizzativi in percorsi chiari, checklist, scadenze e testi già pronti.</p>
+    <div style="position:relative">
+      <form class="hero-search" onsubmit="return false">
+        <input id="homeSearch" autocomplete="off" placeholder="es. ho perso il portafoglio, devo fare l’ISEE, devo scrivere una mail">
+        <button class="btn" type="button" id="startUnknown">Non so da dove iniziare</button>
+      </form>
+      <div id="homeResults" class="search-results hidden"></div>
+    </div>
+    <div class="meta-row">
+      <a class="btn secondary" href="percorso.html">Percorsi guidati</a>
+      <a class="btn ghost" href="generatori.html">Genera un testo</a>
+    </div>
+  </div>
+  <div class="hero-art decorative" aria-hidden="true">
+    <div class="orbit one"></div><div class="orbit two"></div>
+    <div class="floating-card"><b>ISEE universitario</b><p class="small muted">Documenti necessari · 60% completato</p><div class="progress"><span style="width:60%"></span></div></div>
+    <div class="floating-card"><b>Checklist urgente</b><p class="small muted">Blocca carte · denuncia · duplicati</p></div>
+    <div class="floating-card"><b>Interrogami</b><p class="small muted">Domande, risposta modello, simulazione orale</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2>Categorie rapide</h2><p>Scegli l’area del problema.</p></div><a class="btn secondary" href="guide.html">Vedi tutte le guide</a></div>
+  <div id="categoryGrid" class="grid cols-4"></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2>Percorsi più utili</h2><p>Domande guidate che generano azioni concrete.</p></div></div>
+  <div id="quickPaths" class="grid cols-3"></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2>Le cose più cercate</h2><p>Guide pratiche già pronte.</p></div></div>
+  <div id="popularGuides" class="grid cols-3"></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2>Le tue prossime scadenze</h2><p>Scadenze salvate dai percorsi o aggiunte manualmente.</p></div><a class="btn secondary" href="scadenze.html">Apri calendario</a></div>
+  <div id="homeDeadlines" class="grid cols-2"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

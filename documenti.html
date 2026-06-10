@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Documenti · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="documenti">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Documenti</span>
+    <h1>Archivio locale e modalità “prepara la borsa”.</h1>
+    <p class="lead">Registra documenti, appunti e moduli. In questa versione non viene caricato nulla su server: i dati restano nel browser.</p>
+  </div>
+  <div class="card"><h3>Sicurezza</h3><p class="warning">Non salvare documenti sensibili su dispositivi condivisi. Per archivio sicuro reale serve autenticazione e database protetto.</p></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Aggiungi documento</h2>
+    <form id="docForm" class="form-grid">
+      <div class="form-field"><label>Titolo</label><input class="input" name="title" required placeholder="es. Tessera sanitaria"></div>
+      <div class="form-field"><label>Tipo</label><select class="select" name="type"><option>Documento personale</option><option>Certificato</option><option>Scuola</option><option>Università</option><option>Lavoro</option><option>Casa</option><option>Ricevuta</option></select></div>
+      <div class="form-field"><label>File locale</label><input id="docFile" class="input" type="file"></div>
+      <div class="form-field"><label>Note</label><textarea class="textarea" name="notes"></textarea></div>
+      <button class="btn">Registra documento</button>
+    </form>
+  </div>
+  <div><h2>I tuoi documenti</h2><div id="docList" class="grid"></div></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Prepara la borsa</h2>
+    <form id="bagForm" class="form-grid">
+      <div class="form-field"><label>Appuntamento</label><select class="select" name="kind"><option>CAF/ISEE</option><option>Visita medica</option><option>Comune/documenti</option><option>Colloquio</option><option>Scuola/università</option></select></div>
+      <button class="btn">Genera lista</button>
+    </form>
+  </div>
+  <div id="bagOutput"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

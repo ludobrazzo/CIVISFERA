@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Lavoro · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="lavoro">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Sezione lavoro</span>
+    <h1>CV, colloquio simulato e prime esperienze.</h1>
+    <p class="lead">Pensato per chi cerca il primo lavoro o vuole organizzare candidature, competenze e colloqui.</p>
+  </div>
+  <div class="card"><h3>Da sapere</h3><p class="muted">Adatta sempre CV e risposte al ruolo specifico. Evita frasi generiche senza esempi.</p></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Generatore CV base</h2>
+    <form id="cvForm" class="form-grid">
+      <input class="input" name="name" placeholder="Nome e cognome">
+      <input class="input" name="email" placeholder="Email / telefono">
+      <input class="input" name="role" placeholder="Ruolo desiderato">
+      <textarea class="textarea" name="education" placeholder="Formazione"></textarea>
+      <textarea class="textarea" name="experience" placeholder="Esperienze"></textarea>
+      <textarea class="textarea" name="skills" placeholder="Competenze"></textarea>
+      <input class="input" name="availability" placeholder="Disponibilità">
+      <button class="btn">Genera CV</button>
+    </form>
+  </div>
+  <div class="card"><h2>Risultato CV</h2><pre id="cvOutput" class="output-box">Il CV comparirà qui.</pre></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card"><h2>Colloquio simulato</h2><form id="interviewForm" class="form-grid"><input class="input" name="role" placeholder="Ruolo"><select class="select" name="experience"><option>Prima esperienza</option><option>Esperienza breve</option><option>Esperienza media</option></select><button class="btn">Genera domande</button></form></div>
+  <div id="interviewOutput"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

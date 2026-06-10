@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: ricerca servizi vicini come CAF, ASL, farmacie, Comuni e biblioteche.">
+  <title>Servizi vicini · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="servizi">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Mappa servizi</span>
+    <h1>Trova servizi utili vicino a te.</h1>
+    <p class="lead">Cerca CAF, patronati, farmacie, ASL, CUP, biblioteche, uffici comunali, consultori, poste e commissariati. Non richiede API: apre una ricerca mappe esterna.</p>
+  </div>
+  <div class="card"><h3>Prima di andare</h3><div class="list"><div class="list-item">🕒 <span>Controlla orari aggiornati.</span></div><div class="list-item">📄 <span>Verifica documenti richiesti.</span></div><div class="list-item">📞 <span>Chiama se la pratica è urgente.</span></div></div></div>
+</section>
+<section class="section grid cols-2">
+  <div class="card">
+    <h2>Cerca servizio</h2>
+    <form id="serviceForm" class="form-grid">
+      <div class="form-field"><label>Tipo servizio</label><select id="serviceType" name="type" class="select"></select></div>
+      <div class="form-field"><label>Città o zona</label><input class="input" name="city" placeholder="es. Roma Olgiata"></div>
+      <button class="btn">Cerca sulla mappa</button>
+      <button class="btn secondary" type="button" id="geoService">Usa posizione attuale</button>
+    </form>
+  </div>
+  <div id="serviceOutput"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

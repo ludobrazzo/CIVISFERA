@@ -1,0 +1,10 @@
+{
+  "name": "Civisfera",
+  "short_name": "Civisfera",
+  "description": "Percorsi pratici, checklist, scadenze e strumenti per la vita quotidiana.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f4f8fb",
+  "theme_color": "#2278d4",
+  "icons": []
+}

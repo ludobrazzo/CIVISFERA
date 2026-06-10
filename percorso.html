@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Civisfera: percorsi guidati, checklist, scadenze e strumenti pratici per vita quotidiana, scuola, documenti, lavoro e salute.">
+  <title>Percorsi guidati · Civisfera</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/chatbot.js"></script>
+  <script defer src="assets/js/pages.js"></script>
+</head>
+<body data-page="percorso">
+<main id="main">
+
+<section class="page-hero">
+  <div class="page-hero-card">
+    <span class="kicker">Percorsi guidati</span>
+    <h1>Rispondi a poche domande. Ottieni una checklist.</h1>
+    <p class="lead">I percorsi trasformano situazioni confuse in passaggi ordinati e salvabili nell’area personale.</p>
+  </div>
+  <div class="card"><h3>Cosa genera</h3><div class="list"><div class="list-item">🧭 <span>Passaggi in ordine</span></div><div class="list-item">📌 <span>Avvisi sui dati inseriti</span></div><div class="list-item">✅ <span>Checklist salvabile</span></div><div class="list-item">🗓️ <span>Scadenza nel calendario</span></div></div></div>
+</section>
+<section class="section">
+  <div id="pathList" class="grid cols-3"></div>
+  <div id="pathRunner" class="hidden"></div>
+</section>
+
+</main>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>
